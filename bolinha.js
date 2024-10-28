@@ -1,0 +1,56 @@
+const bolinha = document.getElementById("bolinha");
+const botaoReverter = document.getElementById("botaoReverter");
+
+bolinha.style.left = "300px";
+bolinha.style.top = "550px";
+let posicaoTop = 200;
+let paramoveAgora = false;
+let move = 10;
+
+bolinha.style.top = posicaoTop + "px";
+
+const paramove = () => {
+  move = 0;
+  paramoveAgora = true;
+};
+
+const moverBolinha = setInterval(() => {
+  posicaoTop += move;
+  bolinha.style.top = posicaoTop + "px";
+
+  if (posicaoTop > 550 || posicaoTop < 10) {
+    bolinha.style.top = "550px";
+    clearInterval(moverBolinha);
+  }
+  if (posicaoTop < 10) {
+    bolinha.style.top = "10px";
+    clearInterval(moverBolinha);
+  }
+}, 50);
+
+if (!paramoveAgora) {
+  botaoReverter.addEventListener("mousedown", () => {
+    move = -10;
+  });
+
+  botaoReverter.addEventListener("mouseup", () => {
+    move = 10;
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.code === "Space" && !paramoveAgora) {
+      move = -10;
+    }
+  });
+
+  document.addEventListener("keyup", (event) => {
+    if (event.code === "Space" && !paramoveAgora) {
+      move = 10;
+    }
+  });
+}
+
+export default {
+  botaoReverter,
+  paramove: paramove,
+};
