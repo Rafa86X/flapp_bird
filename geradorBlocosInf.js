@@ -10,9 +10,12 @@ const criarBloco = () => {
   if (move > 0) {
     const novoBloco = document.createElement("div");
     novoBloco.style.width = "80px";
-    const alturaAleatoria = Math.floor(Math.random() * (300 - 100 + 1)) + 100;
+    const alturaAleatoria = Math.floor(Math.random() * (250 - 100 + 1)) + 100;
     novoBloco.style.height = alturaAleatoria + "px";
-    novoBloco.style.backgroundColor = "red";
+    novoBloco.style.background = "url('./desenhos/blocoinf.png')";
+    novoBloco.style.backgroundSize = "100%"; // Garante que a imagem cubra 100% da div
+    novoBloco.style.backgroundPosition = "botton";
+    novoBloco.style.backgroundRepeat = "no-repeat";
     novoBloco.style.position = "absolute";
     const posicaoBase = 610;
     novoBloco.style.top = `${posicaoBase - alturaAleatoria}px`;
@@ -39,7 +42,7 @@ const criarBloco = () => {
   }
 };
 
-setInterval(criarBloco, 2100);
+setInterval(criarBloco, 2000);
 
 export default {
   criarBloco: criarBloco,

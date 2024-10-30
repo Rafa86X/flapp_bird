@@ -1,5 +1,6 @@
 body {
   background-color: rgb(29, 28, 28);
+  margin: 0; /* Remove a margem padrão do body */
 }
 
 .bolinha {
@@ -15,7 +16,26 @@ body {
   overflow: hidden;
   width: 800px;
   height: 600px;
-  border: white 3px solid;
+  border: rgb(80, 0, 156) 3px solid;
+  position: relative; /* Posiciona a div como contêiner */
+}
+
+.scrolling-background {
+  position: absolute; /* Para garantir que a imagem fique dentro da div .tela */
+  width: 300%;
+  height: 100%; /* Dobre a altura para permitir a rolagem */
+  background-image: url("./desenhos/fundo.jpg"); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Faz a imagem cobrir toda a div */
+  animation: scroll 250s linear infinite; /* Ajuste a duração da animação conforme necessário */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Começa na posição inicial */
+  }
+  100% {
+    transform: translateX(-50%); /* Move para cima 50% da altura da div */
+  }
 }
 
 .nada {
