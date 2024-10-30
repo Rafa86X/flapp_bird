@@ -1,5 +1,5 @@
 const bolinha = document.getElementById("bolinha");
-const botaoReverter = document.getElementById("botaoReverter");
+const tetaReverter = document.getElementById("tela");
 
 bolinha.style.left = "300px";
 bolinha.style.top = "550px";
@@ -29,11 +29,11 @@ const moverBolinha = setInterval(() => {
 }, 50);
 
 if (!paramoveAgora) {
-  botaoReverter.addEventListener("mousedown", () => {
+  tetaReverter.addEventListener("mousedown", () => {
     move = -10;
   });
 
-  botaoReverter.addEventListener("mouseup", () => {
+  tetaReverter.addEventListener("mouseup", () => {
     move = 10;
   });
 
@@ -51,6 +51,5 @@ if (!paramoveAgora) {
 }
 
 export default {
-  botaoReverter,
   paramove: paramove,
 };

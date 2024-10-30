@@ -23,7 +23,7 @@ const verificarColisoesComBlocos = () => {
   const blocos = document.querySelectorAll(".bloco");
   blocos.forEach((bloco) => {
     if (verificarColisao(bolinha, bloco)) {
-      bloco.style.backgroundColor = "blue";
+      bloco.style.backgroundColor = "red ";
       geradorBlocosSup.paramove();
       geradorBlocosInf.paramove();
       ComportamentoBolinha.paramove();
