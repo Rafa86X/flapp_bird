@@ -3,9 +3,8 @@ body {
 }
 
 .bolinha {
-  width: 60px;
-  height: 60px;
-  background-color: blueviolet;
+  width: 80px;
+  height: 30px;
   border-radius: 50%;
   position: absolute;
   top: 200px;
@@ -13,7 +12,18 @@ body {
 }
 
 .tela {
+  overflow: hidden;
   width: 800px;
   height: 600px;
   border: white 3px solid;
+}
+
+.nada {
+  width: 100px;
+  height: 100px;
+  background-image: url("./desenhos/passaro.gif");
+  position: relative;
+  top: -37px;
+  left: -10px;
+  transform: scaleX(-1);
 }

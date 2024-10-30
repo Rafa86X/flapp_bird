@@ -10,7 +10,7 @@ const criarBloco = () => {
   if (move > 0) {
     const novoBloco = document.createElement("div");
     novoBloco.style.width = "80px";
-    const alturaAleatoria = Math.floor(Math.random() * (250 - 100 + 1)) + 100;
+    const alturaAleatoria = Math.floor(Math.random() * (300 - 100 + 1)) + 100;
     novoBloco.style.height = alturaAleatoria + "px";
     novoBloco.style.backgroundColor = "red";
     novoBloco.style.position = "absolute";
@@ -39,7 +39,7 @@ const criarBloco = () => {
   }
 };
 
-setInterval(criarBloco, 1500);
+setInterval(criarBloco, 2100);
 
 export default {
   criarBloco: criarBloco,
