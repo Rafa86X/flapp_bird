@@ -30,22 +30,30 @@ const moverBolinha = setInterval(() => {
 
 if (!paramoveAgora) {
   tetaReverter.addEventListener("mousedown", () => {
-    move = -10;
+    if (!paramoveAgora) {
+      move = -10;
+    }
   });
 
   tetaReverter.addEventListener("mouseup", () => {
-    move = 10;
+    if (!paramoveAgora) {
+      move = 10;
+    }
   });
 
   document.addEventListener("keydown", (event) => {
     if (event.code === "Space" && !paramoveAgora) {
-      move = -10;
+      if (!paramoveAgora) {
+        move = -10;
+      }
     }
   });
 
   document.addEventListener("keyup", (event) => {
     if (event.code === "Space" && !paramoveAgora) {
-      move = 10;
+      if (!paramoveAgora) {
+        move = 10;
+      }
     }
   });
 }

@@ -1,4 +1,14 @@
-export const criarBloco = (move, base, scala = "", sup) => {
+let move = 10;
+
+function setaMove(n) {
+  move = n;
+}
+
+function getMove() {
+  return move;
+}
+
+function criarBloco(base, scala = "", sup) {
   if (move > 0) {
     const novoBloco = document.createElement("div");
     novoBloco.style.width = "80px";
@@ -40,4 +50,6 @@ export const criarBloco = (move, base, scala = "", sup) => {
       geradorBlocoInf.removeChild(novoBloco);
     }, 4000);
   }
-};
+}
+
+export default { criarBloco: criarBloco, setaMove, setaMove, getMove: getMove };

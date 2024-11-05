@@ -1,11 +1,9 @@
-import { criarBloco } from "./criaBlocos.js";
+import criarBloco from "./criaBlocos.js";
 
-let move = 10;
 let fase = 0;
 let intervaloCriarBloco2 = "";
 
 const paramove = () => {
-  move = 0;
   clearInterval(intervaloCriarBloco2);
 };
 
@@ -18,28 +16,28 @@ const setaFase = (n = 0) => {
     case 0:
       clearInterval(intervaloCriarBloco2);
       intervaloCriarBloco2 = setInterval(
-        () => criarBloco(move, 610, "scaleY(1)", 2),
+        () => criarBloco.criarBloco(610, "scaleY(1)", 2),
         2000
       );
       break;
     case 1:
       clearInterval(intervaloCriarBloco2);
       intervaloCriarBloco2 = setInterval(
-        () => criarBloco(move, 610, "scaleY(1)", 2),
+        () => criarBloco.criarBloco(610, "scaleY(1)", 2),
         1200
       );
       break;
     case 2:
       clearInterval(intervaloCriarBloco2);
       intervaloCriarBloco2 = setInterval(
-        () => criarBloco(move, 610, "scaleY(1)", 2),
+        () => criarBloco.criarBloco(610, "scaleY(1)", 2),
         600
       );
       break;
     case 3:
       clearInterval(intervaloCriarBloco2);
       intervaloCriarBloco2 = setInterval(
-        () => criarBloco(move, 610, "scaleY(1)", 2),
+        () => criarBloco.criarBloco(610, "scaleY(1)", 2),
         300
       );
       break;

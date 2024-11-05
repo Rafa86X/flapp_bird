@@ -38,12 +38,13 @@ body {
   }
 }
 
-.nada {
+.passarinho {
   width: 100px;
   height: 100px;
-  background-image: url("./desenhos/passaro.gif");
+  background-image: url("./desenhos/passaro2.gif");
+  background-size: 100%;
   position: relative;
-  top: -37px;
-  left: -10px;
+  top: -55px;
+  left: -5px;
   transform: scaleX(-1);
 }
