@@ -1,51 +1,53 @@
-const geradorBlocoInf = document.getElementById("geradorBlocoInf");
-let move = 10;
-let criablocoX;
+import { criarBloco } from "./criaBlocos.js";
 
+let move = 10;
+let fase = 0;
+let intervaloCriarBloco = "";
 const paramove = () => {
   move = 0;
 };
 
-const criarBloco = () => {
-  if (move > 0) {
-    const novoBloco = document.createElement("div");
-    novoBloco.style.width = "80px";
-    const alturaAleatoria = Math.floor(Math.random() * (260 - 100 + 1)) + 100;
-    novoBloco.style.height = alturaAleatoria + "px";
-    novoBloco.style.background = "url('./desenhos/blocoinf.png')";
-    novoBloco.style.backgroundSize = "100%"; // Garante que a imagem cubra 100% da div
-    novoBloco.style.backgroundPosition = "botton";
-    novoBloco.style.transform = "scaleY(-1)";
+const setaFase = (n = 0) => {
+  fase = n;
+  console.log("entrou no setafase " + n);
+  console.log("bloco superior");
 
-    novoBloco.style.backgroundRepeat = "no-repeat";
-    novoBloco.style.position = "absolute";
-    const posicaoBase = 0;
-    novoBloco.style.top = `${posicaoBase}px`;
-    novoBloco.style.left = "730px";
-    novoBloco.className = "bloco";
-    geradorBlocoInf.appendChild(novoBloco);
-    let posicaoLeft = 730;
-
-    const moverBloco = setInterval(() => {
-      posicaoLeft -= move;
-      novoBloco.style.left = posicaoLeft + "px";
-
-      if (posicaoLeft > window.innerWidth) {
-        clearInterval(moverBloco);
-        geradorBlocoInf.removeChild(novoBloco);
-      }
-    }, 50);
-
-    setTimeout(() => {
-      clearInterval(moverBloco);
-      geradorBlocoInf.removeChild(novoBloco);
-    }, 4000);
+  switch (fase) {
+    case 0:
+      clearInterval(intervaloCriarBloco);
+      intervaloCriarBloco = setInterval(
+        () => criarBloco(move, 0, "scaleY(-1)", 1),
+        1500
+      );
+      break;
+    case 1:
+      clearInterval(intervaloCriarBloco);
+      intervaloCriarBloco = setInterval(
+        () => criarBloco(move, 0, "scaleY(-1)", 1),
+        900
+      );
+      break;
+    case 2:
+      clearInterval(intervaloCriarBloco);
+      intervaloCriarBloco = setInterval(
+        () => criarBloco(move, 0, "scaleY(-1)", 1),
+        600
+      );
+      break;
+    case 3:
+      clearInterval(intervaloCriarBloco);
+      intervaloCriarBloco = setInterval(
+        () => criarBloco(move, 0, "scaleY(-1)", 1),
+        300
+      );
+      break;
+    default:
+      console.log("Valor de fase não corresponde a nenhum caso");
+      break;
   }
 };
 
-setInterval(criarBloco, 1500);
-
 export default {
-  criarBloco: criarBloco,
   paramove: paramove,
+  setaFase: setaFase,
 };

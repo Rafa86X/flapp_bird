@@ -1,5 +1,6 @@
 import geradorBlocosSup from "./geradorBlocosSup.js";
 import geradorBlocosInf from "./geradorBlocosInf.js";
+import { criarBloco } from "./criaBlocos.js";
 import ComportamentoBolinha from "./bolinha.js";
 
 const bolinha = document.getElementById("bolinha");
@@ -23,6 +24,7 @@ const verificarColisoesComBlocos = () => {
   const blocos = document.querySelectorAll(".bloco");
   blocos.forEach((bloco) => {
     if (verificarColisao(bolinha, bloco)) {
+      bloco.style.background = null;
       bloco.style.backgroundColor = "red ";
       geradorBlocosSup.paramove();
       geradorBlocosInf.paramove();
