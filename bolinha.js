@@ -3,7 +3,7 @@ const tetaReverter = document.getElementById("tela");
 
 bolinha.style.left = "300px";
 bolinha.style.top = "550px";
-let posicaoTop = 300;
+let posicaoTop = 400;
 let paramoveAgora = false;
 let move = 0;
 

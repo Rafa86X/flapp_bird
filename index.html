@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>RAFADEVWEB@GMAIL.COM</title>
 </head>
+
 <body>
     <div id="tela" class="tela">
         <div class="scrolling-background"></div>
+        <div class="pontuacaoJogo" id="pontuacaoJogo">000</div>
         <div id="geradorBlocoInf"></div>
         <div id="geradorBlocoSup"></div>
-        <div id="bolinha" class="bolinha"><div id="passarinho" class="passarinho"></div></div>
+        <div id="bolinha" class="bolinha">
+            <div id="passarinho" class="passarinho"></div>
+        </div>
+    </div>
+
+
+    <div id="modalInicioJogo" class="modal">
+        <div class="modal-content">
+            <h2>Bem-vindo ao FLapp Script!</h2>
+            <p>Prepare-se para começar!</p>
+            <button id="btnIniciar">Iniciar Jogo</button>
+        </div>
+    </div>
+
+    <div id="modalFimJogo" class="modal">
+        <div class="modal-content">
+            <h2>Fim de Jogo</h2>
+            <p>Sua pontuação final é:</p>
+            <p><span id="pontuacaoFinal" class="pontuacaoFinal">0</span></p>
+
+            <button id="btnReiniciar">Reiniciar Jogo</button>
+        </div>
     </div>
 
     <script src="script.js" type="module"></script>
 </body>
+
 </html>
